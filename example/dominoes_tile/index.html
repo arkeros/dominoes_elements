@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>dominoes-tile</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="import" href="packages/dominoes_elements/dominoes_tile.html">
+  </head>
+
+  <body>
+    <section>
+      <div>Flat tiles</div>
+  
+      <dominoes-tile left="6" right="9"></dominoes-tile>
+      <dominoes-tile left="6" right="9" class="colored"></dominoes-tile>  
+    </section>
+    
+    <section>
+      <div>Raised tiles</div>
+  
+      <dominoes-tile raised left="6" right="9"></dominoes-tile>
+      <dominoes-tile raised left="6" right="9" class="colored"></dominoes-tile>  
+    </section>
+    
+    <section>
+      <div>Vertical tiles</div>
+  
+      <dominoes-tile vertical left="6" right="9"></dominoes-tile>
+      <dominoes-tile vertical left="6" right="9" class="colored"></dominoes-tile>  
+    </section>
+    
+    <section>
+      <div>Vertical Raised tiles</div>
+  
+      <dominoes-tile vertical raised left="6" right="9"></dominoes-tile>
+      <dominoes-tile vertical raised left="6" right="9" class="colored"></dominoes-tile>  
+    </section>
+    
+    <script type="application/dart">export "package:polymer/init.dart";</script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>dominoes-icons</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="import" href="packages/dominoes_elements/dominoes_icons.html">
+  </head>
+
+  <body>
+    <template is="auto-binding">
+      <template repeat="{{iconset in $.meta.metaArray}}">
+        <h2>{{iconset.id}}</h2>
+        <h5>{{iconset.id + '-icons.html'}}</h5>
+        <div class="set" horizontal wrap justified layout>
+          <template repeat="{{ icon in iconset.iconNames }}">
+            <span class="container" vertical center layout>
+              <core-icon icon="{{ iconset.id }}:{{ icon }}"></core-icon>
+              <div>{{ icon }}</div>
+            </span>
+          </template>
+        </div>
+      </template>
+      <core-iconset id="meta"></core-iconset>
+    </template>
+    
+    <script type="application/dart">export "package:polymer/init.dart";</script>
+  </body>
+</html>

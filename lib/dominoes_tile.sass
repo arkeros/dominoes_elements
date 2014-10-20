@@ -1,0 +1,76 @@
+$tile-size: 36px
+
+\:host 
+  color: #212121
+  background-color: #fafafa
+  display: inline-block
+  position: relative
+  width: 2*$tile-size
+  height: $tile-size
+  border-radius: 4px
+  
+\:host([vertical])
+  width: $tile-size
+  height: 2*$tile-size
+
+  .left, .right
+    left: 0
+    right: 0
+    transform: rotate(90deg)
+    
+  .left
+    top: 0
+    bottom: 50%
+    
+  .right
+    top: 50%
+    bottom: 0
+    
+  .separator
+    height: 1px
+    width: 75%
+    
+\:host([raised])
+  border: 1px solid #212121
+  border-bottom-width: 4px
+  border-right-width: 4px  
+
+core-icon
+  fill: #212121
+
+.separator, .pin
+  display: block
+  background-color: #dadada
+  overflow: auto
+  margin: auto
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+.separator
+  width: 1px
+  height: 75%
+        
+.pin
+  width: 4px
+  height: 4px
+  border-radius: 2px
+
+
+.left, .right 
+  display: block
+  position: absolute
+  width: $tile-size
+  height: $tile-size
+  top: 0
+  bottom: 0
+    
+.left
+  left: 0
+  right: 50%
+  
+.right 
+  left: 50%
+  right: 0

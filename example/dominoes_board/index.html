@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>dominoes-board</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="import" href="packages/dominoes_elements/dominoes_board.html">
+    <link rel="import" href="packages/dominoes_elements/dominoes_tile.html">
+  </head>
+
+  <body unresolved>
+    <section>
+      <div>Board</div>
+      
+      <dominoes-board>  
+        <dominoes-tile left="9" right="6"></dominoes-tile>
+        <dominoes-tile id="root" left="6" right="6"></dominoes-tile>
+        <dominoes-tile left="6" right="2"></dominoes-tile>     
+        <dominoes-tile left="2" right="5"></dominoes-tile>          
+      </dominoes-board>
+    </section>
+    
+    <section>
+      <div>Raised Board</div>
+      
+      <dominoes-board>  
+        <dominoes-tile raised left="9" right="6"></dominoes-tile>
+        <dominoes-tile id="root" raised left="6" right="6"></dominoes-tile>
+        <dominoes-tile raised left="6" right="2"></dominoes-tile>     
+        <dominoes-tile raised left="2" right="5"></dominoes-tile>          
+      </dominoes-board>
+    </section>
+    
+    <script type="application/dart">export "package:polymer/init.dart";</script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+name: dominoes_elements
+description: A pub package
+dependencies:
+  core_elements: any
+  paper_elements: any
+  polymer: any
+  sass: any
+transformers:
+- sass
+- polymer:
+    entry_points:
+      - example/index.html
+      - example/dominoes_board/index.html
+      - example/dominoes_icons/index.html
+      - example/dominoes_tile/index.html

@@ -1,0 +1,32 @@
+$tile-size: 36px
+
+\:host
+  display: block
+  position: relative
+  width: calc(#{8*2*$tile-size} + 7px)
+  height: 370px
+  
+  ::content dominoes-tile[raised]
+    margin-left: -3px  
+  
+  ::content dominoes-tile
+    display: block
+    position: absolute
+    
+    &#root
+      overflow: auto
+      margin: auto
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+     
+     
+middle
+  top: calc(50% - #{$tile-size/2})      
+      
+      
+@for $i from -7 through 7
+  \:host ::content #tile#{$i}
+    @extend middle
+    left: calc(50% + #{($i - 1)*$tile-size})

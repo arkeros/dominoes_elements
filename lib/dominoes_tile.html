@@ -1,0 +1,18 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_shadow.html">
+<link rel="import" href="dominoes_icons.html">
+
+<polymer-element name="dominoes-tile">
+  <template>
+    <link href="dominoes_tile.css" rel="stylesheet">
+    
+    <paper-shadow></paper-shadow>
+
+    <core-icon class="left" icon="dominoes:dot{{left}}" alt="{{left}}"></core-icon>
+    <div class="separator"></div>
+    <div class="pin"></div>
+    <core-icon class="right" icon="dominoes:dot{{right}}" alt="{{right}}"></core-icon>
+  </template>
+
+  <script type="application/dart" src="dominoes_tile.dart"></script>
+</polymer-element>
