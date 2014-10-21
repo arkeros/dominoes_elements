@@ -13,9 +13,11 @@ class DominoesBoard extends PolymerElement {
     int i = -2 * rootIndex;
 
     for(DominoesTile tile in tiles) {
-      if (tile.id != "root") {
+      if (tile.id != "root")
         tile.id = "tile$i";
-      }
+      tile.vertical = (6 < i && i < 12) || (-12 < i && i < -6);
+      tile.swapped = i < -11 || 11 < i;
+      
       i += 2;
     }
     

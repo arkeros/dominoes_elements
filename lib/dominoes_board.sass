@@ -1,32 +1,54 @@
-$tile-size: 36px
-
 \:host
   display: block
   position: relative
-  width: calc(#{8*2*$tile-size} + 7px)
-  height: 370px
-  
-  ::content dominoes-tile[raised]
-    margin-left: -3px  
+  width: #{2*16 + 2}em
+  height: #{2*9 + 2}em
+  font-size: 18px
   
   ::content dominoes-tile
     display: block
     position: absolute
-    
-    &#root
-      overflow: auto
-      margin: auto
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-     
-     
-middle
-  top: calc(50% - #{$tile-size/2})      
+    overflow: auto
+    margin: auto
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
       
+      
+%top
+  margin-top: 1em
+  
+%right
+  margin-right: 1em
+  
+%bottom
+  margin-bottom: 1em
+  
+%left
+  margin-left: 1em  
+      
+
+@for $i from -25 through -12
+  \:host ::content #tile#{$i}
+    @extend %bottom
+    margin-left: #{-2 * $i - 23}em       
+    
+@for $i from -11 through -8
+  \:host ::content #tile#{$i}
+    @extend %left
+    margin-bottom: #{2 * $i + 23}em      
       
 @for $i from -7 through 7
   \:host ::content #tile#{$i}
-    @extend middle
-    left: calc(50% + #{($i - 1)*$tile-size})
+    margin-left: calc(50% + #{2*($i - 1)}em)
+    
+@for $i from 8 through 11
+  \:host ::content #tile#{$i}
+    @extend %right
+    margin-top: #{-2 * $i + 23}em
+    
+@for $i from 12 through 25
+  \:host ::content #tile#{$i}
+    @extend %top
+    margin-right: #{2 * $i - 23}em

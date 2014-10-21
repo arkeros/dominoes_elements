@@ -5,8 +5,12 @@ import 'package:polymer/polymer.dart';
 
 @CustomTag('dominoes-tile')
 class DominoesTile extends PolymerElement {  
-  @published int left = 0;
-  @published int right = 0;
+  @PublishedProperty(reflect: true) int left = 0;
+  @PublishedProperty(reflect: true) int right = 0;
+  @PublishedProperty(reflect: true) bool vertical = false;
+  @PublishedProperty(reflect: true) bool raised = false;
+  @PublishedProperty(reflect: true) bool swapped = false;
+  @PublishedProperty(reflect: true) bool flipped = false;
   
   DominoesTile.created() : super.created();
   
@@ -15,4 +19,8 @@ class DominoesTile extends PolymerElement {
   
   @ComputedProperty('left == right')
   bool get isDouble => readValue(#isDouble);
+  
+  String toString() {
+    return "[$left·$right]";  
+  }
 }

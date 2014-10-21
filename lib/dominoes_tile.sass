@@ -1,23 +1,43 @@
-$tile-size: 36px
-
 \:host 
   color: #212121
   background-color: #fafafa
   display: inline-block
   position: relative
-  width: 2*$tile-size
-  height: $tile-size
+  width: 4em
+  height: 2em
   border-radius: 4px
   
+\:host([swapped])      
+  .left 
+    left: 50%
+    right: 0  
+    
+  .right
+    left: 0
+    right: 50%
+  
 \:host([vertical])
-  width: $tile-size
-  height: 2*$tile-size
+  width: 2em
+  height: 4em
 
   .left, .right
     left: 0
     right: 0
     transform: rotate(90deg)
     
+  .left
+    top: 50%
+    bottom: 0
+    
+  .right
+    top: 0
+    bottom: 50%
+    
+  .separator
+    height: 1px
+    width: 75%
+    
+\:host([vertical][swapped])        
   .left
     top: 0
     bottom: 50%
@@ -26,12 +46,8 @@ $tile-size: 36px
     top: 50%
     bottom: 0
     
-  .separator
-    height: 1px
-    width: 75%
-    
 \:host([raised])
-  border: 1px solid #212121
+  border: 0 solid #212121
   border-bottom-width: 4px
   border-right-width: 4px  
 
@@ -62,8 +78,8 @@ core-icon
 .left, .right 
   display: block
   position: absolute
-  width: $tile-size
-  height: $tile-size
+  width: 2em
+  height: 2em
   top: 0
   bottom: 0
     
@@ -74,3 +90,4 @@ core-icon
 .right 
   left: 50%
   right: 0
+  
