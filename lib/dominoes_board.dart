@@ -10,19 +10,36 @@ class DominoesBoard extends PolymerElement {
   
   DominoesBoard.created() : super.created() {
     rootIndex = tiles.indexOf(root);
-    int i = -2 * rootIndex;
-
+    
+    int i = leftmostId;
     for(DominoesTile tile in tiles) {
       if (tile.id != "root")
         tile.id = "tile$i";
-      tile.vertical = (6 < i && i < 12) || (-12 < i && i < -6);
-      tile.swapped = i < -11 || 11 < i;
       
-      i += 2;
+      if (i == 8) {
+        tile.vertical = true;     
+        tile.swapped = false;
+        
+        i += 2;
+      } else {        
+        tile.vertical = ((7 < i && i < 12) || (-12 < i && i < -7)) != tile.isDouble;
+        tile.swapped = i < -11 || 11 < i;
+        
+        i += tile.isDouble ? 1 : 2;
+      }      
     }
     
     print(this.tiles);    
     print(rootIndex);
+  }
+  
+  int get leftmostId {
+    int id = -2 * rootIndex;
+    for(int i = 0;tiles[i].id != 'root';i++) {
+      if (tiles[i].isDouble)
+        id++;
+    }
+    return id;
   }
   
   List<DominoesTile> get tiles {
